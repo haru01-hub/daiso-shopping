@@ -2,10 +2,9 @@ import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 
-import ProductPrice from './product-price'
-
 import { Card, CardContent, CardHeader } from '@/components/ui/card'
 import { Product } from '@/types'
+import ProductPrice from './product-price'
 
 const ProductCard = ({ product }: { product: Product }) => {
   return (
@@ -33,10 +32,8 @@ const ProductCard = ({ product }: { product: Product }) => {
         <div className="flex-between gap-4">
           <p>{product.rating} stars</p>
           {product.stock > 0 ? (
-            //여기가 item이 0이라면 OutofStock 띄우기임!
             <ProductPrice value={Number(product.price)} />
           ) : (
-            // <p className="font-bold">${product.price}</p>
             <p className="text-destructive">Out of Stock</p>
           )}
         </div>
